@@ -87,11 +87,15 @@ class LibRIS {
   protected function parseArray($lines) {
     $recordset = array();
     
+    // Do any cleaning and normalizing.
+    $this->cleanData($lines);
+    
     $record = array();
     $lastTag = NULL;
     foreach ($lines as $line) {
       $line = trim($line);
       $matches = array();
+      
       preg_match(self::LINE_REGEX, $line, $matches);
       if (!empty($matches[3])) {
         $lastTag = $matches[2];
@@ -133,6 +137,26 @@ class LibRIS {
       }
       
       print PHP_EOL;
+    }
+  }
+  
+  /**
+   * Clean up the data before processing.
+   *
+   * @param array $lines
+   *   Indexed array of lines of data.
+   */
+  protected function cleanData(&$lines) {
+    
+    if (empty($lines)) return;
+    
+    // Currently, we only need to strip a BOM if it exists.
+    // Thanks to Derik Badman (http://madinkbeard.com/) for finding the 
+    // bug and suggesting this fix:
+    // http://blog.philipp-michels.de/?p=32
+    $first = $lines[0];
+    if (substr($first, 0, 3) == pack('CCC', 0xef, 0xbb, 0xbf)) {
+      $lines[0] = substr($first, 3);
     }
   }
   

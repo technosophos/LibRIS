@@ -2,7 +2,7 @@
 require_once '../src/LibRIS.php';
 
 $ris = new LibRIS();
-$ris->parseFile('./test1.ris');
+$ris->parseFile('./derik-test.ris');
 
 $ris->printRecords();
 

@@ -55,9 +55,9 @@ To print this message, do:
 
   <!-- Global properties -->
   <property name="srcdir" value="./src"/>
-  <property name="testdir" value="./test"/>
+  <property name="testdir" value="./tests"/>
   <property name="builddir" value="./bin/build"/>
-  <property name="docsdir" value="./docs"/>
+  <property name="docsdir" value="./doc"/>
   <property name="packagedir" value="./dist"/>
   
   <!-- Files that must be included in the release -->
@@ -88,7 +88,7 @@ To print this message, do:
   </fileset>
   
   <!-- Documentation -->
-  <fileset id="docs" dir="./docs">
+  <fileset id="docs" dir="./doc">
     <include name="**/*" />
   </fileset>
   
@@ -147,7 +147,7 @@ To print this message, do:
     <mkdir dir="${releasedir}/examples"/>
     <mkdir dir="${releasedir}/test"/>
     <mkdir dir="${releasedir}/tutorials"/>
-    <mkdir dir="${releasedir}/docs"/>
+    <mkdir dir="${releasedir}/doc"/>
     
     <!-- Copy license files. -->
     <copy todir="${releasedir}">
@@ -180,7 +180,7 @@ To print this message, do:
     </copy>
     
     <!-- Copy documentation --> 
-    <copy todir="${releasedir}/docs">
+    <copy todir="${releasedir}/doc">
       <fileset refid="docs"/>
     </copy>
     
@@ -268,7 +268,7 @@ To print this message, do:
   
   <!-- Run a coverage report -->
   <target name="coverage" depends="lint" description="Run a coverage analysis.">
-    <coverage-setup database="./test/db/coverage.db">
+    <coverage-setup database="./tests/db/coverage.db">
       <fileset dir="src">
         <include name="LibRIS/*.php"/>
       </fileset>
@@ -276,33 +276,31 @@ To print this message, do:
     <phpunit codecoverage="true" haltonfailure="true">
       <formatter type="plain" todir="test/reports" outfile="coverage.xml"/>
       <batchtest>
-        <fileset dir="test/Tests">
+        <fileset dir="tests/Tests">
           <include name="**/*Test.php"/>
         </fileset>
       </batchtest>
     </phpunit>
     <coverage-report outfile="test/reports/coverage.xml">
-      <report todir="test/coverage"/>
+      <report todir="tests/coverage"/>
     </coverage-report>
   </target>
   
   <!-- Run a full test and format an HTML report -->
   <target name="test" depends="lint" description="Run full tests">
     <phpunit>
-      <formatter todir="test/reports" type="xml"/>
+      <formatter todir="tests/reports" type="xml"/>
       <batchtest>
-        <fileset dir="test/Tests">
+        <fileset dir="tests/Tests">
           <include name="**/*Test.php"/>
         </fileset>
       </batchtest>
     </phpunit>
     <phpunitreport 
-      infile="test/reports/testsuites.xml" 
+      infile="tests/reports/testsuites.xml" 
       format="frames" 
-      todir="test/reports/html" 
+      todir="tests/reports/html" 
       />
-    <delete file="./test/db/qpTest.db" />
-    <delete file="./test/db/qpTest2.db" />
   </target>
   
   <target name="docBuild" description="Build a package containing just docs." 
@@ -319,7 +317,7 @@ To print this message, do:
     </copy>
         
     <!-- Copy documentation --> 
-    <copy todir="${releasedir}/docs">
+    <copy todir="${releasedir}/doc">
       <fileset refid="docs"/>
     </copy>
     

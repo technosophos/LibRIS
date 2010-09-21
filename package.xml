@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="2.1" xmlns="http://pear.php.net/dtd/package-2.1" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.1     http://pear.php.net/dtd/package-2.1.xsd">
+ <name>LibRIS</name>
+ <channel>pear.querypath.org</channel>
+ <summary>LibRIS is a tool for parsing RIS data and data files.</summary>
+ <description/>
+ <lead>
+  <name>Matt Butcher</name>
+  <user>technosophos</user>
+  <email>matt@aleph-null.tv</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-09-21</date>
+ <time>13:03:20</time>
+ <version>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+ <notes>This is the initial release of LibRIS.
+
+LibRIS is a tool for parsing or generating LibRIS data. It is
+intended as a development library.
+
+
+Basic usage of LibRIS:
+
+require 'LibRIS.php';
+
+// Parse and print
+$ris = new LibRIS();
+$ris-&gt;parseFile('./data.ris');
+$ris-&gt;printRecords();
+
+// Clone the above and write records.
+$records = $ris-&gt;getRecords();
+$rw = new RISWriter();
+print $rw-&gt;writeRecords($records);
+
+</notes>
+ <contents>
+  <dir name="/">
+   <dir name="doc" baseinstalldir="/">
+    <file role="doc" name="RecordFormat.mdown"/>
+   </dir>
+   <dir name="src" baseinstalldir="/">
+    <file role="php" name="LibRIS.php"/>
+   </dir>
+   <dir name="tests" baseinstalldir="/">
+    <file role="test" name="derik-test.ris"/>
+    <file role="test" name="short.ris"/>
+    <file role="test" name="simple_test.php"/>
+    <file role="test" name="test1.ris"/>
+   </dir>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>2.0.0a1</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease/>
+</package>

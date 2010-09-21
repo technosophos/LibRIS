@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="2.1" xmlns="http://pear.php.net/dtd/package-2.1" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.1     http://pear.php.net/dtd/package-2.1.xsd">
+ <name>LibRIS</name>
+ <channel>pear.querypath.org</channel>
+ <summary>LibRIS is a tool for parsing RIS data and data files.</summary>
+ <description>LibRIS provides an RIS parser and serializer.</description>
+ <lead>
+  <name>Matt Butcher</name>
+  <user>technosophos</user>
+  <email>matt@aleph-null.tv</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-09-21</date>
+ <time>13:03:20</time>
+ <version>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+ <notes>This is the initial release of LibRIS.
+
+LibRIS is a tool for parsing or generating LibRIS data. It is
+intended as a development library.
+
+
+Basic usage of LibRIS:
+
+require 'LibRIS.php';
+
+// Parse and print
+$ris = new LibRIS();
+$ris-&gt;parseFile('./data.ris');
+$ris-&gt;printRecords();
+
+// Clone the above and write records.
+$records = $ris-&gt;getRecords();
+$rw = new RISWriter();
+print $rw-&gt;writeRecords($records);
+
+</notes>
+ <contents>
+  <dir name="/">
+   <file role="test" name="test/LibRIS/pear.querypath.org/test1.ris"/>
+   <file role="test" name="test/LibRIS/pear.querypath.org/simple_test.php"/>
+   <file role="test" name="test/LibRIS/pear.querypath.org/short.ris"/>
+   <file role="test" name="test/LibRIS/pear.querypath.org/derik-test.ris"/>
+   <file role="php" name="php/LibRIS.php"/>
+   <file role="doc" name="doc/LibRIS/pear.querypath.org/RecordFormat.mdown"/>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.8</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease>
+  <filelist>
+   <install name="doc/LibRIS/pear.querypath.org/RecordFormat.mdown" as="pear.querypath.org/RecordFormat.mdown"/>
+   <install name="php/LibRIS.php" as="LibRIS.php"/>
+   <install name="test/LibRIS/pear.querypath.org/derik-test.ris" as="pear.querypath.org/derik-test.ris"/>
+   <install name="test/LibRIS/pear.querypath.org/short.ris" as="pear.querypath.org/short.ris"/>
+   <install name="test/LibRIS/pear.querypath.org/simple_test.php" as="pear.querypath.org/simple_test.php"/>
+   <install name="test/LibRIS/pear.querypath.org/test1.ris" as="pear.querypath.org/test1.ris"/>
+  </filelist>
+ </phprelease>
+</package>

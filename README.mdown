@@ -11,6 +11,39 @@ reference for the format can be found here:
 
 [http://www.refman.com/support/risformat_intro.asp](http://www.refman.com/support/risformat_intro.asp)
 
+# Installation
+
+**Method 1:** Install LibRIS using Pear
+
+Use your `pear` client to install LibRIS:
+
+   pear channel-discover pear.querypath.org
+   pear install querypath/LibRIS
+
+For more, see [pear.querypath.org](http://pear.querypath.org).
+
+Use it in your scripts like this:
+
+   <?php
+   require 'LibRIS.php';
+   ?>
+
+If you have already installed LibRIS using Pear, you can upgrade your library to the latest stable release by doing `pear upgrade LibRIS`.
+
+**Method 2:** Download LibRIS
+
+1. Get LibRIS from [the downloads page](http://github.com/technosophos/LibRIS/downloads)
+2. Uncompress the files (`tar -zxvf LibRIS-1.0.0.tgz`)
+3. Put the files where you want them to go.
+
+Use it in your scripts like this:
+
+    <?php
+    require 'path/to/LibRIS.php';
+    ?>
+
+# Using LibRIS
+
 General usage for this class is simple:
 
 - The LibRIS class is used to parse RIS.
@@ -19,7 +52,7 @@ General usage for this class is simple:
 Here's an example (from test/simple_test.php):
 
     <?php
-    require_once '../src/LibRIS.php';
+    require_once 'LibRIS.php';
 
     $ris = new LibRIS();
     $ris->parseFile('./test1.ris');
@@ -47,6 +80,20 @@ Here's a line-by-line explanation of the code above:
 
 The format of the records is documented in `doc/RecordFormat.mdown`.
 
+# I Found a Bug!
+
+If you found a bug, *please* let me know. The best way is to file a report at 
+[http://github.com/technosophos/LibRIS/issues](http://github.com/technosophos/LibRIS/issues).
+
+You can also find me on Freenode's IRC in #querypath.
+
 ## The Phing Script
 
-This file includes a Phing build.xml script. However, it is rarely used.
+This file includes a Phing `build.xml` script. However, it is rarely used.
+
+If you are interested in using this as part of a build toolchain, see [phing.info](http://phing.info)
+
+## Why is there a README file and a README.mdown file?
+
+* README is a required file for the Pear packaging system.
+* README.mdown is the GitHub-friendly README file for this project.

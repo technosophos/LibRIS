@@ -17,16 +17,16 @@ reference for the format can be found here:
 
 Use your `pear` client to install LibRIS:
 
-   pear channel-discover pear.querypath.org
-   pear install querypath/LibRIS
+    pear channel-discover pear.querypath.org
+    pear install querypath/LibRIS
 
 For more, see [pear.querypath.org](http://pear.querypath.org).
 
 Use it in your scripts like this:
 
-   <?php
-   require 'LibRIS.php';
-   ?>
+    <?php
+    require 'LibRIS.php';
+    ?>
 
 If you have already installed LibRIS using Pear, you can upgrade your library to the latest stable release by doing `pear upgrade LibRIS`.
 

@@ -32,7 +32,7 @@
 class LibRIS {
   
   const RIS_EOL = "\r\n";
-  const LINE_REGEX = '/^(([A-Z1-9]{2})  -(.*))|(.*)$/';
+  const LINE_REGEX = '/^(([A-Z1-9]{2})\s+-(.*))|(.*)$/';
   
   protected $data = NULL;
   

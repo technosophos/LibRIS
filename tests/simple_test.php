@@ -10,3 +10,14 @@ $records = $ris->getRecords();
 
 $rw = new RISWriter();
 print $rw->writeRecords($records);
+
+// Regression against Banyuls.ris
+$ris = new LibRIS();
+$ris->parseFile('./Banyuls.ris');
+
+$ris->printRecords();
+
+$records = $ris->getRecords();
+
+$rw = new RISWriter();
+print $rw->writeRecords($records);

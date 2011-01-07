@@ -3,28 +3,29 @@
  <name>LibRIS</name>
  <channel>pear.querypath.org</channel>
  <summary>LibRIS is a tool for parsing RIS data and data files.</summary>
- <description>LibRIS provides an RIS parser and serializer.</description>
+ <description/>
  <lead>
   <name>Matt Butcher</name>
   <user>technosophos</user>
   <email>matt@aleph-null.tv</email>
   <active>yes</active>
  </lead>
- <date>2010-09-21</date>
- <time>13:03:20</time>
+ <date>2011-01-07</date>
+ <time>10:14:32</time>
  <version>
-  <release>1.0.0</release>
-  <api>1.0.0</api>
+  <release>1.1.0</release>
+  <api>1.1.0</api>
  </version>
  <stability>
   <release>stable</release>
   <api>stable</api>
  </stability>
- <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
- <notes>This is the initial release of LibRIS.
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+ <notes>1.1.0:
 
-LibRIS is a tool for parsing or generating LibRIS data. It is
-intended as a development library.
+Updates for better EndNote export support.
+
+Thanks to Jean-Luc Aucouturier for contributions.
 
 
 Basic usage of LibRIS:
@@ -41,6 +42,8 @@ $records = $ris-&gt;getRecords();
 $rw = new RISWriter();
 print $rw-&gt;writeRecords($records);
 
+New in 1.1.0: Regex expanded to cover EndNote cases.
+
 </notes>
  <contents>
   <dir name="/">
@@ -48,8 +51,8 @@ print $rw-&gt;writeRecords($records);
    <file role="test" name="test/LibRIS/pear.querypath.org/simple_test.php"/>
    <file role="test" name="test/LibRIS/pear.querypath.org/short.ris"/>
    <file role="test" name="test/LibRIS/pear.querypath.org/derik-test.ris"/>
+   <file role="test" name="test/LibRIS/pear.querypath.org/Banyuls.ris"/>
    <file role="php" name="php/LibRIS.php"/>
-   <file role="doc" name="doc/LibRIS/pear.querypath.org/RecordFormat.mdown"/>
   </dir>
  </contents>
  <dependencies>
@@ -64,8 +67,8 @@ print $rw-&gt;writeRecords($records);
  </dependencies>
  <phprelease>
   <filelist>
-   <install name="doc/LibRIS/pear.querypath.org/RecordFormat.mdown" as="pear.querypath.org/RecordFormat.mdown"/>
    <install name="php/LibRIS.php" as="LibRIS.php"/>
+   <install name="test/LibRIS/pear.querypath.org/Banyuls.ris" as="pear.querypath.org/Banyuls.ris"/>
    <install name="test/LibRIS/pear.querypath.org/derik-test.ris" as="pear.querypath.org/derik-test.ris"/>
    <install name="test/LibRIS/pear.querypath.org/short.ris" as="pear.querypath.org/short.ris"/>
    <install name="test/LibRIS/pear.querypath.org/simple_test.php" as="pear.querypath.org/simple_test.php"/>

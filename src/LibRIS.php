@@ -287,6 +287,10 @@ class RISTags {
      'L3' => 'Related records',
      'L4' => 'Images',
      'ER' => 'End of Reference',
+     
+     // Unsure about the origin of these
+     'Y2' => 'Primary date 2',
+     'BT' => 'Institution [?]',
    ); 
   
   public static $tagDescriptions = array(

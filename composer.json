@@ -1,0 +1,12 @@
+{
+  "name": "technosophos/LibRIS",
+  "description": "An RIS parser. RIS is a format for reference metadata.",
+  "type": "library",
+  "keywords": ["RIS", "File parser", "Reference", "Bibliography"],
+  "license": "MIT or GPLv2",
+  "homepage": "https://github.com/technosophos/LibRIS",
+
+  "requires": {
+    "php": ">=5.2.0"
+  }
+}

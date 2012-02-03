@@ -13,15 +13,20 @@
  <date>2011-01-07</date>
  <time>10:14:32</time>
  <version>
-  <release>1.1.0</release>
-  <api>1.1.0</api>
+  <release>2.0.0</release>
+  <api>2.0.0</api>
  </version>
  <stability>
   <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
- <notes>1.1.0:
+ <notes>2.0.0
+Updated to use PHP namespaces, Packagist/Composer.
+
+Code was cleaned up, and better exception handling was added.
+   
+1.1.0:
 
 Updates for better EndNote export support.
 
@@ -48,7 +53,10 @@ New in 1.1.0: Regex expanded to cover EndNote cases.
  <contents>
   <dir name="/">
    <dir name="src" baseinstalldir="/">
-    <file role="php" name="LibRIS.php"/>
+     <file role="php" name="LibRIS/RISReader.php"/>
+     <file role="php" name="LibRIS/RISWriter.php"/>
+     <file role="php" name="LibRIS/RISTags.php"/>
+     <file role="php" name="LibRIS/ParseException.php"/>
    </dir>
    <dir name="tests" baseinstalldir="/">
     <file role="test" name="Banyuls.ris"/>
@@ -62,7 +70,7 @@ New in 1.1.0: Regex expanded to cover EndNote cases.
  <dependencies>
   <required>
    <php>
-    <min>5.2.0</min>
+    <min>5.3.0</min>
    </php>
    <pearinstaller>
     <min>2.0.0a1</min>

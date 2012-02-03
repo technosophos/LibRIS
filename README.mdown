@@ -13,7 +13,39 @@ reference for the format can be found here:
 
 # Installation
 
-**Method 1:** Install LibRIS using Pear
+**Method 1:** Install using Packagist.
+
+1. Follow the instructions at http://packagist.org
+2. In your new project, create a `composer.json` file which requires
+   LibRIS:
+
+```javascript
+{
+  "require": {
+    "technosophos/LibRIS": ">=1.0.0"
+  }
+}
+```
+
+When you next run `php composer.phar install` it will automatically
+fetch and install LibRIS.
+
+Note that as of LibRIS 2.0.0, the Composer autoloader can load
+LibRIS:
+
+```php
+<?php
+require 'vendor/.composer/autoload.php';
+
+use \LibRIS\RISReader;
+
+$reader = new RISReader();
+
+//...
+?>
+```
+
+**Method 2:** Install LibRIS using Pear
 
 Use your `pear` client to install LibRIS:
 
@@ -30,7 +62,7 @@ Use it in your scripts like this:
 
 If you have already installed LibRIS using Pear, you can upgrade your library to the latest stable release by doing `pear upgrade LibRIS`.
 
-**Method 2:** Download LibRIS
+**Method 3:** Download LibRIS
 
 1. Get LibRIS from [the downloads page](http://github.com/technosophos/LibRIS/downloads)
 2. Uncompress the files (`tar -zxvf LibRIS-1.0.0.tgz`)

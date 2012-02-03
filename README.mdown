@@ -83,24 +83,27 @@ General usage for this class is simple:
 
 Here's an example (from test/simple_test.php):
 
-    <?php
-    require_once 'LibRIS.php';
+```php
+<?php
+require_once 'LibRIS/RISReader.php';
+require_once 'LibRIS/RISWriter.php';
 
-    $ris = new LibRIS();
-    $ris->parseFile('./test1.ris');
+$ris = new \LibRIS\RISReader();
+$ris->parseFile('./test1.ris');
 
-    $ris->printRecords();
+$ris->printRecords();
 
-    $records = $ris->getRecords();
+$records = $ris->getRecords();
 
-    $rw = new RISWriter();
-    print $rw->writeRecords($records);
-    ?>
+$rw = new \LibRIS\RISWriter();
+print $rw->writeRecords($records);
+?>
+```
 
 Here's a line-by-line explanation of the code above:
 
-    1. 
-    2. Include the library
+    1. Include the libraries.
+    2. You don't need this if you use an autoloader.
     3. 
     4. Create a new LibRIS reader
     5. Parse a file

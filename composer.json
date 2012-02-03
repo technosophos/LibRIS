@@ -5,6 +5,7 @@
   "keywords": ["RIS", "File parser", "Reference", "Bibliography"],
   "license": "MIT or GPLv2",
   "homepage": "https://github.com/technosophos/LibRIS",
+  "version": "2.0.x",
 
   "requires": {
     "php": ">=5.2.0"

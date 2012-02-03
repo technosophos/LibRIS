@@ -10,8 +10,8 @@
   <email>matt@aleph-null.tv</email>
   <active>yes</active>
  </lead>
- <date>2011-01-07</date>
- <time>10:14:32</time>
+ <date>2012-02-03</date>
+ <time>10:12:14</time>
  <version>
   <release>2.0.0</release>
   <api>2.0.0</api>
@@ -21,42 +21,34 @@
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
- <notes>2.0.0
-Updated to use PHP namespaces, Packagist/Composer.
+ <notes>LibRIS 2.0.
 
-Code was cleaned up, and better exception handling was added.
-   
-1.1.0:
+The 2.0.x branch is reorganized and now requires PHP 5.3 to properly
+function.
 
-Updates for better EndNote export support.
+It supports the following new features:
 
-Thanks to Jean-Luc Aucouturier for contributions.
+- Refactored library
+- PSR-0 support for autoloading
+- Packagist/Composer support.
 
 
-Basic usage of LibRIS:
+LibRIS has been refactored to contain the following classes:
 
-require 'LibRIS.php';
-
-// Parse and print
-$ris = new LibRIS();
-$ris-&gt;parseFile('./data.ris');
-$ris-&gt;printRecords();
-
-// Clone the above and write records.
-$records = $ris-&gt;getRecords();
-$rw = new RISWriter();
-print $rw-&gt;writeRecords($records);
-
-New in 1.1.0: Regex expanded to cover EndNote cases.
-
+- \LibRIS\RISReader: Read RIS files.
+- \LibRIS\RISWriter: Write RIS files.
+- \LibRIS\RISTags: Tags and labels for RIS files.
+- \LibRIS\ParseException: Thrown when parsing RIS fails.
 </notes>
  <contents>
   <dir name="/">
    <dir name="src" baseinstalldir="/">
-     <file role="php" name="LibRIS/RISReader.php"/>
-     <file role="php" name="LibRIS/RISWriter.php"/>
-     <file role="php" name="LibRIS/RISTags.php"/>
-     <file role="php" name="LibRIS/ParseException.php"/>
+    <dir name="LibRIS">
+     <file role="php" name="ParseException.php"/>
+     <file role="php" name="RISReader.php"/>
+     <file role="php" name="RISTags.php"/>
+     <file role="php" name="RISWriter.php"/>
+    </dir>
    </dir>
    <dir name="tests" baseinstalldir="/">
     <file role="test" name="Banyuls.ris"/>

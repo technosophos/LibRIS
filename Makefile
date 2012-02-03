@@ -2,4 +2,7 @@
 test :
 	php tests/simple_test.php
 
-.PHONY: test
+pear :
+	php ../pyrus.phar mk && php ../pyrus.phar package
+
+.PHONY: test pear

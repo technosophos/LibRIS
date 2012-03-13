@@ -106,7 +106,7 @@ class RISReader {
    *  associative array of entry details. (See {@link LibRIS})
    */
   public function parseString($string) {
-    $contents = explode ("\r\n", $string);
+    $contents = explode (RISReader::RIS_EOL, $string);
     $this->parseArray($contents);
   }
 

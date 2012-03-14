@@ -50,6 +50,9 @@ class RISWriter {
     $buffer = array();
     $fmt = '%s  - %s';
 
+	 $buffer[] = sprintf($fmt, 'TY', $tags['TY'][0]);
+	 unset($tags['TY']);
+
     foreach ($tags as $tag => $values) {
       foreach ($values as $value) {
         $buffer[] = sprintf($fmt, $tag, $value);

@@ -1,10 +1,10 @@
 {
-  "name": "technosophos/LibRIS",
-  "description": "An RIS parser. RIS is a format for reference metadata.",
+  "name": "thompsonsj/LibRIS",
+  "description": "An RIS parser. RIS is a format for reference metadata. A fork of technosophos/LibRIS.",
   "type": "library",
   "keywords": ["RIS", "File parser", "Reference", "Bibliography"],
   "license": "MIT or GPLv2",
-  "homepage": "https://github.com/technosophos/LibRIS",
+  "homepage": "https://github.com/thompsonsj/LibRIS",
   "authors": [
     {
       "name" : "M Butcher",
